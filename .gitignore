@@ -2,3 +2,4 @@ assets_build/javascripts/*
 assets_build/stylesheets/*
 node_modules
 bower_components
+lib
