@@ -3,6 +3,7 @@
   "description": "Dependencies for template",
   "version": "1.0.0",
   "dependencies": {
-    "normalize.css": "~3.0.2"
+    "normalize.css": "~3.0.2",
+    "Font-Awesome": "~4.3.0"
   }
 }
