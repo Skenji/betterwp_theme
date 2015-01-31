@@ -1,7 +1,7 @@
 {
-  "name": "elephant-template",
+  "name": "betterWP-template",
   "version": "1.0.0",
-  "description": "Wordpress template for Elephant",
+  "description": "A blank theme to enjoy wordpress development",
   "devDependencies": {
     "autoprefixer-stylus": "^0.5.0",
     "csso-stylus": "0.0.3",
