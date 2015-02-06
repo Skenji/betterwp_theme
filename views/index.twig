@@ -1,10 +1,62 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<h2>{{foo}}</h2>
-	<p>{{qux}}</p>
-	{% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-	{% endfor %}
+	<section id="main-header">
+		<img src="{{ site.theme.link }}/assets_build/images/brand_image.png" alt="Chili's Honduras" title="Chili's Honduras" id="brand-image">
+		<div id="scroller"></div>
+	</section>
+
+	<section id="social">
+		<article>
+			<img src="{{ site.theme.link }}/assets_build/images/main_product.png" alt="Club sandwich de Chili's">
+		</article>
+		<article>
+			<h1>QUISQUE VITAE CONSQUAT METUS ALIQUAM AT TURPIS</h1>
+			<div></div>
+		</article>
+	</section>
+
+	<section id="promociones">
+		<h2>Promociones</h2>
+		<a href="{{ site.link }}/promociones">Click para ver promociones</a>
+	</section>
+
+	<section id="menu">
+		<h2>Menú</h2>
+		<a href="{{ site.link }}/menu">Click para ver menú</a>
+	</section>
+
+	<section id="restaurantes">
+		<h2>Restaurantes</h2>
+		<select name="ubicacion" id="ubicacion">
+			<option value="">Tegucigalpa</option>
+		</select>
+		<section id="branches-wrapper">
+			<article class="branch">
+				<h3>Sucursal</h3>
+				<div>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit fugit voluptate, minima minus animi amet molestias voluptates odio ad molestiae ipsum tenetur, in. Nisi sit quia repellat porro corrupti vel.
+				</div>
+			</article>
+		</section>
+	</section>
+
+	<section id="communication">
+
+		<section id="contacto">
+			<h2>Contacto</h2>
+			<p>
+				Si deseas hacernos una consulta o enviarnos un comentario acerca de nuestros productos y servicios, puedes hacernosla llegar a través del formulario a continuación:
+			</p>
+
+		</section>
+
+		<section id="suscribete">
+			<h2>Suscríbete</h2>
+			<p>
+				Forma parte de nuestra comunidad; danos tu correo electrónico y enterate de nuestras promociones y descuentos
+			</p>
+		</section>
+	</section>
 
 {% endblock %}
