@@ -10,11 +10,17 @@ module.exports = (grunt)->
 	grunt.initConfig
 		pkg: grunt.file.readJSON 'package.json'
 
-		bower:
-			install:
-				options:
-					bowerOptions:
-						production: true
+		bower_concat:
+			all:
+				dest: 'assets_build/javascripts/bower.js'
+				cssDest: 'assets_build/stylesheets/bower.css'
+
+		copy:
+			font_awesome:
+				expand: true
+				flatten: true
+				src: 'bower_components/font-awesome/fonts/*'
+				dest: 'assets_build/fonts'
 
 		stylus:
 
@@ -37,9 +43,22 @@ module.exports = (grunt)->
 					'assets_build/javascripts/site.js': 'assets/javascripts/*.coffee'
 
 		uglify:
+
+			bower:
+				options:
+					mangle: true
+					compress: true
+				files:
+					'assets_build/javascripts/bower.min.js': 'assets_build/javascripts/bower.js'
+
 			my_target:
 				files:
 					'assets_build/javascripts/site.min.js': 'assets_build/javascripts/site.js'
+
+		cssmin:
+			target:
+				files:
+					'assets_build/stylesheets/style.min.css': ['assets_build/stylesheets/bower.css', 'assets_build/stylesheets/style.css']
 	
 		watch:
 
@@ -58,6 +77,13 @@ module.exports = (grunt)->
 			livereload:
 				options:
 					livereload: true
-				files: ['assets_build/**/*']					
+				files: ['assets_build/**/*']
+
+	# Registering Tasks
+
+	#Default
 
 	grunt.registerTask 'default', ['stylus', 'coffee']
+
+	#Assets precompile task
+	grunt.registerTask 'assets:precompile', ['bower_concat', 'stylus', 'coffee', 'uglify', 'cssmin', 'copy']
