@@ -11,7 +11,10 @@ module.exports = (grunt)->
 		pkg: grunt.file.readJSON 'package.json'
 
 		bower:
-			install: {}
+			install:
+				options:
+					bowerOptions:
+						production: true
 
 		stylus:
 
