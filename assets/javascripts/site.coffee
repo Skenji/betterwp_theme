@@ -1,4 +1,4 @@
-$(document).ready get_ready
-
 get_ready = ()->
-	console.log '¡Hola Mundo!'
+	alert '¡Hola Mundo!'
+
+$(document).ready get_ready
