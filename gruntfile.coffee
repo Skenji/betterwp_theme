@@ -64,15 +64,15 @@ module.exports = (grunt)->
 
 			stylus:
 				files: 'assets/stylesheets/*.styl'
-				tasks: ['stylus', 'cssmin']
+				tasks: 'stylus'
 
 			coffee:
 				files: 'assets/javascripts/*.coffee'
 				tasks: 'coffee'
 
 			uglify:
-				files: 'assets_build/javascripts/site.js'
-				tasks: 'uglify:my_target'
+				files: 'assets_build/javascripts/*.js'
+				tasks: 'uglify'
 
 			livereload:
 				options:
